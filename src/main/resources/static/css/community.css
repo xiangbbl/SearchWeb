@@ -1,0 +1,25 @@
+body{
+    background-color: #efefef;
+}
+.main{
+    width: 95%;
+    margin-top: 30px;
+    background-color: white;
+}
+.btn_publish{
+    float:right;
+    margin-bottom: 20px;
+}
+.up_publish{
+    margin-bottom: 20px;
+}
+.img{
+    max-width: 10%;
+    height: auto;
+}
+.text-large {
+    font-size: 100%;
+}
+.text-small{
+    font-size: smaller;
+}
