@@ -35,7 +35,6 @@ public class PublishController {
             @RequestParam(value = "tag", required = false) String tag,
             HttpServletRequest request,
             Model model) {
-        System.out.println("Called post: tile is: " + title);
         model.addAttribute("title", title);
         model.addAttribute("description", description);
         model.addAttribute("tag", tag);
