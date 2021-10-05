@@ -28,9 +28,7 @@ public class QuestionController {
     public String question(@PathVariable Long id, Model model){
         QuestionDTO q = questionService.getById(id);
         List<CommentDTO> commentDTOList = commentService.ListOfCommentById(id);
-        /*for(CommentDTO c: commentDTOList) {
-            System.out.println(c);
-        }*/
+
         model.addAttribute("comments", commentDTOList);
         questionService.viewInc(id);
         model.addAttribute("question", q);

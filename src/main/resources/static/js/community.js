@@ -2,7 +2,6 @@
 function post(){
     var questionId = $("#question_id").val();
     var comment = $("#comment_content").val();
-
     if(!comment.trim().length){
         alert("Cannot be empty");
         return;
@@ -18,13 +17,16 @@ function post(){
         }),
         success: function (response) {
             if(response.code==100){
-                $("#comment_section").hide();
+                //alert("???????");
+                //$("#comment_section").hide();
+                window.location.reload();
+                window.scrollTo(0, 0);
             }
             else if(response.code==1000){
                 var accept = confirm(response.message);
                 if(accept){
                     window.open("https://github.com/login/oauth/authorize?client_id=f638ad8ff2bd233d2ea6&redirect_uri=http://localhost:8080/callback&scope=user&state=1");
-                    //window.localStorage.setItem("closable", true);
+                    window.localStorage.setItem("closable", true);
                 }
             }
             else {
