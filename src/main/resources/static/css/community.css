@@ -29,3 +29,12 @@ body{
 .text-small{
     font-size: smaller;
 }
+.comment-btn{
+    float:right;
+}
+.menu{
+    color: #999;
+}
+.menu .icon:hover{
+    color: #499ef3;
+}

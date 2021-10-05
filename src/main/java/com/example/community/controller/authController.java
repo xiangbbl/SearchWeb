@@ -62,7 +62,7 @@ public class authController {
             //TODO: githubUser.getId() return account id. Check account id in user class
             //userRep.findByName
             boolean b = existsByAccount(String.valueOf(githubUser.getId()));
-            System.out.println("boolean: "+  b);
+
             if(!b) {
                 user.setAccountId(String.valueOf(githubUser.getId()));
                 user.setGmtCreate(System.currentTimeMillis());
@@ -77,9 +77,9 @@ public class authController {
             else{
                 User old_user = userRep.findByaccountId(String.valueOf(githubUser.getId()));
                 //old_user.setToken(set_Token(user));
-                System.out.println("old token" + old_user.getToken());
+
                 t = set_Token(old_user);
-                System.out.println("new token" + t);
+
                 userRep.save(old_user);
                 response.addCookie(new Cookie("token", t));
                 //updateToken(user);

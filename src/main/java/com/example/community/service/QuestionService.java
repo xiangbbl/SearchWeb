@@ -20,7 +20,6 @@ public class QuestionService {
     private QuestionMapper questionMapper;
     @Autowired
     private QuestionRep questionRep;
-
     @Autowired
     private UserMapper userMapper;
 
@@ -48,4 +47,12 @@ public class QuestionService {
         questionDTO.setUser(user);
         return questionDTO;
     }
+
+    public void viewInc(Long id) {
+        Question question = questionRep.findById(id).orElse(null);
+        //.out.println(question.getViewCount()+1);
+        question.setViewCount(question.getViewCount()+1);
+        questionRep.save(question);
+    }
+
 }
